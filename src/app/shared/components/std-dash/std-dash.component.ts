@@ -61,7 +61,7 @@ export class StdDashComponent implements OnInit {
 ];
 getEditedStd !: IStudent
 
-  constructor(
+constructor(
 private _snackBar : SnackBarService
   ) { }
 

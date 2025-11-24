@@ -13,6 +13,9 @@ import { StdDashComponent } from './shared/components/std-dash/std-dash.componen
 import { StdFormComponent } from './shared/components/std-form/std-form.component';
 import { StdTableComponent } from './shared/components/std-table/std-table.component';
 import { FormsModule } from '@angular/forms';
+import { PostDashComponent } from './shared/components/post-dash/post-dash.component';
+import { CardsComponent } from './shared/components/cards/cards.component';
+import { CTableComponent } from './shared/components/c-table/c-table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { FormsModule } from '@angular/forms';
     TodoListComponent,
     StdDashComponent,
     StdFormComponent,
-    StdTableComponent
+    StdTableComponent,
+    PostDashComponent,
+    CardsComponent,
+    CTableComponent
   ],
   imports: [
     BrowserModule,

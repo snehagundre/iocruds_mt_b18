@@ -1,0 +1,27 @@
+
+
+<div class="card bg-light">
+    <div class="card-body">
+        <form 
+        (ngSubmit)="onprdAdd()"
+        #prdForm="ngForm">
+          <div class="form-group">
+            <label for="pname">Product Name:*</label>
+            <input type="text" name="pname" id="pname" ngModel required class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="pdesc">Product Description:*</label>
+            <textarea type="text" name="pdesc" id="pdesc" ngModel required class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="pcat">Product Category:*</label>
+            <select type="text" name="pcat" id="pcat" ngModel required class="form-control">
+            <option value="product">product</option>
+            <option value="category">category</option>
+            </select>
+          </div>
+          <button class="btn btn-sm btn-block btn-primary">Add Product</button>
+
+        </form>
+    </div>
+</div>
