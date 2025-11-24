@@ -1,0 +1,46 @@
+
+<div class="card bg-light" *ngif="getstdData.length>0; else nostd">
+ <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Full Name</th>
+                    <th>Nick Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Is Active</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of getstdData;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{s.fname}} {{s.lname}}</td>
+                    <td>{{s.nickname}}</td>
+                    <td>{{s.email}}</td>
+                    <td>{{s.contact}}</td>
+                    <td>{{s.isActive ==='active'? 'yes' : 'no'}}</td>
+                    <td>
+                    <button mat-icon-button color="primary">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+                    </button>
+                </td>
+                    <td>
+                    <button
+                    (click)="onStdRemove(s)"
+                    mat-icon-button color="warn">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+                    </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #nostd>
+   <p class="alert alert-warning">
+    No Student Is Added Yet !!!
+   </p>
+</ng-template>

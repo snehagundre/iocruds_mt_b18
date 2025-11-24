@@ -1,0 +1,20 @@
+
+<hr>
+<div class="container">
+    <h2 class="alert alert-primary text-capitalize mt-2 ">
+    Student Task Using IO Decorator
+</h2>
+    <div class="row mt-2">
+    <div class="col-md-4 md-mb-0">
+     <app-std-form
+     (newStdEmmiter)="getNewStd($event)"
+     ></app-std-form>
+    </div>
+    <div class="col-md-8 md-mb-0">
+       <app-std-table
+       (rStdEmmiter)="getRemovedStd($event)"
+       [getstdData]="studentsArr"
+       ></app-std-table>
+    </div>
+</div>
+</div>

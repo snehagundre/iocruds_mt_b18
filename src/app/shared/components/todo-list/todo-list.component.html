@@ -1,0 +1,27 @@
+
+
+<div class="card bg-light" *ngIf="getTodoData.length>0; else notodo">
+    <div class="card-body">
+    <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-item-center" 
+    *ngFor="let t of getTodoData">
+    <strong> {{t.todoItem}}</strong>
+    <div>
+        <button 
+        (click)="ontoDoEdit(t)"
+        mat-raised-button color="primary"
+        class="btn btn-sm mr-3">Edit</button>
+        <button 
+        (click)="ontoDoRemove(t)"
+        mat-raised-button color="warn"
+        class="btn btn-sm">Remove</button>
+    </div>
+    </li>
+</ul>
+    </div>
+</div>
+<ng-template #notodo>
+  <p class="alert alert-warning">
+    No ToDo Is Added Yet !!!!
+  </p>
+</ng-template>

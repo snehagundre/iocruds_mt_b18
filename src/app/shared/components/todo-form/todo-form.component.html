@@ -1,0 +1,29 @@
+
+<div class="card bg-light">
+    <div class="card-body">
+        <form 
+        (ngSubmit)="onToDoAdd()"
+        #todoForm="ngForm">
+<div class="form-group">
+    <label for="todoItem">ToDo Item:*</label>
+    <input type="text" class="form-control"
+    ngModel required
+    name="todoItem" id="todoItem">
+</div>
+ <button *ngIf="!isInEditMode"
+ mat-raised-button color="primary"
+ [disabled]="todoForm.invalid"
+ class="btn btn-sm btn-block">
+    Add ToDo
+ </button>
+ <button 
+ (click)="onToDoUpdate()"
+ *ngIf="isInEditMode"
+ mat-raised-button color="accent"
+ [disabled]="todoForm.invalid"
+ class="btn btn-sm btn-block">
+    Update ToDo
+ </button>
+</form>
+    </div>
+</div>

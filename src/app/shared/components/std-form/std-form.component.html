@@ -1,0 +1,58 @@
+
+
+<div class="card bg-light">
+    <div class="card-body">
+        <form #stdForm="ngForm"
+        (ngSubmit)="onStdAdd()"
+        >
+           <div class="form-group">
+            <label for="fname">Fname:*</label>
+            <input type="text" class="form-control"
+            ngModel name="fname" id="fname" required
+            >
+           </div>
+           <div class="form-group">
+            <label for="lname">Lname:*</label>
+            <input type="text" class="form-control"
+            ngModel name="lname" id="lname" required
+            >
+           </div>
+           <div class="form-group">
+            <label for="nickname">Nick Name:*</label>
+            <input type="text" class="form-control"
+            ngModel name="nickname" id="nickname" required
+            >
+           </div>
+           <div class="form-group">
+            <label for="email">Email:*</label>
+            <input type="text" class="form-control"
+            ngModel name="email" id="email" required
+            >
+           </div>
+           <div class="form-group">
+            <label for="contact">Contact:*</label>
+            <input type="text" class="form-control"
+            ngModel name="contact" id="contact" required
+            >
+           </div>
+           <div class="form-group">
+           <label for="contact">IsActive:*</label>
+           <select class="form-control" name="isActive" id="isActive" ngModel required>
+           <option value="active">Active</option>
+           <option value="inactive">Inactive</option>
+           </select>
+           </div>
+           <button 
+           *ngIf="!isInEditMode"
+           [disabled]="stdForm.invalid"
+           class="btn btn-block btn-sm btn-primary">Add Student
+           </button>
+           <button 
+           *ngIf="isInEditMode"
+           mat-raised-button color="accent"
+           [disabled]="stdForm.invalid"
+           class="btn btn-block btn-sm">Update Student
+           </button>
+        </form>
+    </div>
+</div>
