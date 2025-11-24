@@ -21,14 +21,16 @@
             </select>
           </div>
           <button 
+          [disabled]="prdForm.invalid"
           type="submit"
-          [disabled]="prdFormReff.invalid"
           *ngIf="!isInEditMode"
            class="btn btn-sm btn-block btn-primary">Add Product</button>
           <button
           *ngIf="isInEditMode"
+          [disabled]="prdForm.invalid"
           (click)="onPrdUpdate()"
-          class="btn btn-sm btn-block btn-warning">Update Product</button>
+          class="btn btn-sm btn-block btn-warning">Update Product
+          </button>
 
         </form>
     </div>
