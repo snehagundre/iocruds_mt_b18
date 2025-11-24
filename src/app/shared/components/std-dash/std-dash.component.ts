@@ -59,6 +59,7 @@ export class StdDashComponent implements OnInit {
     id:'129993'
   }
 ];
+getEditedStd !: IStudent
 
   constructor(
 private _snackBar : SnackBarService
@@ -71,14 +72,20 @@ this.studentsArr = [nstd,...this.studentsArr]
 this._snackBar.openSnackBar(`New Student ${nstd.fname} added successfully !!!`)
 }
 getRemovedStd(rstd:IStudent){
-  let cnf 
-   confirm(` Are You Sure To Remove ?`)
+  let cnf = confirm(` Are You Sure To Remove ?`)
    if(cnf){
 let getIndex = this.studentsArr.findIndex(std => std.id === rstd.id)
 this.studentsArr.splice(getIndex,1)
 this._snackBar.openSnackBar(`New Student ${rstd.fname} removed successfully !!!`)
 
    }
-
+}
+getEditStd(estudent:IStudent){
+ this.getEditedStd = estudent
+}
+getUpdtedStd(ustd : IStudent){
+ let updateIndex  = this.studentsArr.findIndex(ustd => ustd.id === ustd.id)
+ this.studentsArr[updateIndex] = ustd
+ this._snackBar.openSnackBar(`Student ${ustd.fname} Updated successfully !!!`)
 }
 }

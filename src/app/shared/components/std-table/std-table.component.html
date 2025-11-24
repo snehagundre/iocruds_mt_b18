@@ -1,7 +1,7 @@
 
-<div class="card bg-light" *ngif="getstdData.length>0; else nostd">
+<div class="card bg-light" >
  <div class="table-responsive">
-        <table class="table table-bordered text-center">
+        <table class="table table-bordered text-center" *ngIf="getstdData.length>0 ; else nostd">
             <thead class="bg-primary text-white">
                 <tr>
                     <th>Sr No</th>
@@ -23,7 +23,9 @@
                     <td>{{s.contact}}</td>
                     <td>{{s.isActive ==='active'? 'yes' : 'no'}}</td>
                     <td>
-                    <button mat-icon-button color="primary">
+                    <button 
+                    (click)="onStdEdit(s)"
+                    mat-icon-button color="primary">
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
                     </button>
                 </td>

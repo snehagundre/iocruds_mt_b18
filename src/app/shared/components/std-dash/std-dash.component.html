@@ -7,11 +7,14 @@
     <div class="row mt-2">
     <div class="col-md-4 md-mb-0">
      <app-std-form
+     (uStdEmmiter)="getUpdtedStd($event)"
+     [GetEmitedEstd]="getEditedStd"
      (newStdEmmiter)="getNewStd($event)"
      ></app-std-form>
     </div>
     <div class="col-md-8 md-mb-0">
        <app-std-table
+       (eStdEmmiter)="getEditStd($event)"
        (rStdEmmiter)="getRemovedStd($event)"
        [getstdData]="studentsArr"
        ></app-std-table>

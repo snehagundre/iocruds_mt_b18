@@ -48,6 +48,7 @@
            class="btn btn-block btn-sm btn-primary">Add Student
            </button>
            <button 
+           (click)="onStdUpdate()"
            *ngIf="isInEditMode"
            mat-raised-button color="accent"
            [disabled]="stdForm.invalid"

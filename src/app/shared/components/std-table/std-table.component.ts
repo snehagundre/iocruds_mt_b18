@@ -9,12 +9,16 @@ import { IStudent } from '../../models/std';
 export class StdTableComponent implements OnInit {
 @Input() getstdData !: Array<IStudent>
 @Output() rStdEmmiter : EventEmitter<IStudent> = new EventEmitter<IStudent>()
+@Output() eStdEmmiter : EventEmitter<IStudent> = new EventEmitter<IStudent>()
   constructor() { }
 
   ngOnInit(): void {
   }
   onStdRemove(rstd : IStudent){
   this.rStdEmmiter.emit(rstd)
+  }
+  onStdEdit(estd:IStudent){
+   this.eStdEmmiter.emit(estd)
   }
 
 }
