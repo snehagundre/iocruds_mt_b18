@@ -48,6 +48,8 @@ export class PostDashComponent implements OnInit {
   }
 ];
 
+getEPrd !: IProduct;
+
   constructor(
     private _snackbar :SnackBarService
   ) { }
@@ -66,7 +68,16 @@ export class PostDashComponent implements OnInit {
   this.productsArr.splice(getIndex,1);
   this._snackbar.openSnackBar(`the product ${rprd.pname} removed Succesfully`)
   }
-  
+  }
+  getemitedPrd(eprd : IProduct){
+  this.getEPrd = eprd
+  }
+  getUpdatedPrd(uprd : IProduct
+  ){
+  let getIndex = this.productsArr.findIndex( prd => prd.pid === uprd.pid);
+  this.productsArr[getIndex] = uprd
+  this._snackbar.openSnackBar(`the product ${uprd.pname} updated Succesfully`)
+     
   }
 
 }

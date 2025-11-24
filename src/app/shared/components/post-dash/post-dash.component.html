@@ -7,7 +7,9 @@
     <div class="row">
         <div class="col-md-6 offset-md-3" >
             <app-cards 
+            [getEprdemited]="getEPrd"
            (newprdEmmiter)="getNewPrd($event)"
+           (uprdEmmiter)="getUpdatedPrd($event)"
             >
 
             </app-cards>
@@ -17,7 +19,9 @@
       <div class="col-md-6 col-12 col-lg-4 mb-3" *ngFor="let prod of productsArr">
           <app-c-table
            [getStdObj]="prod"
-           (rprdEmmiter)="getRemovePrd($event)">
+           (rprdEmmiter)="getRemovePrd($event)"
+           (eprdEmmiter)="getemitedPrd($event)"
+           >
            
         </app-c-table>
       </div>

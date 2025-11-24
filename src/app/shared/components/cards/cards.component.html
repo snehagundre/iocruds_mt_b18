@@ -20,7 +20,11 @@
             <option value="category">category</option>
             </select>
           </div>
-          <button class="btn btn-sm btn-block btn-primary">Add Product</button>
+          <button *ngIf="!isInEditMode"
+           class="btn btn-sm btn-block btn-primary">Add Product</button>
+          <button *ngIf="isInEditMode"
+          (click)="onPrdUpdate()"
+          class="btn btn-sm btn-block btn-warning">Update Product</button>
 
         </form>
     </div>
