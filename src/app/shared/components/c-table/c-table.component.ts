@@ -9,6 +9,7 @@ import { IProduct } from '../../models/product';
 export class CTableComponent implements OnInit {
   @Input() getStdObj !: IProduct;
   @Output() rprdEmmiter : EventEmitter<IProduct> = new  EventEmitter<IProduct>()
+  @Output() eprdEmmiter : EventEmitter<IProduct> = new  EventEmitter<IProduct>()
 
   constructor() { }
 
@@ -16,6 +17,10 @@ export class CTableComponent implements OnInit {
   }
   onProdRemove(rPrd : IProduct){
 this.rprdEmmiter.emit(rPrd)
+  }
+  onProdEdit(eprd : IProduct){
+this.eprdEmmiter.emit(eprd)
+
   }
 
 }
