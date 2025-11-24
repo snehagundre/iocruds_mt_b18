@@ -57,8 +57,8 @@ getEPrd !: IProduct;
   ngOnInit(): void {
   }
   getNewPrd(nprd :IProduct){
-   this.productsArr = [nprd , ...this.productsArr]
-  this._snackbar.openSnackBar(`the product ${nprd.pname} removed Succesfully`)
+  this.productsArr = [nprd ,...this.productsArr]
+  this._snackbar.openSnackBar(`the product ${nprd.pname} Added Succesfully`)
 
   }
   getRemovePrd(rprd : IProduct){

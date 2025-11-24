@@ -20,9 +20,13 @@
             <option value="category">category</option>
             </select>
           </div>
-          <button *ngIf="!isInEditMode"
+          <button 
+          type="submit"
+          [disabled]="prdFormReff.invalid"
+          *ngIf="!isInEditMode"
            class="btn btn-sm btn-block btn-primary">Add Product</button>
-          <button *ngIf="isInEditMode"
+          <button
+          *ngIf="isInEditMode"
           (click)="onPrdUpdate()"
           class="btn btn-sm btn-block btn-warning">Update Product</button>
 

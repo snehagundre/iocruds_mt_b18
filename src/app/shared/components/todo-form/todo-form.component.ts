@@ -21,11 +21,13 @@ isInEditMode: boolean = false;
   ngOnInit(): void {
   }
  onToDoAdd(){
-  let newToDo:Itodo ={
+  if(this.todoFormReff.value.trim()){
+    let newToDo:Itodo ={
     ...this.todoFormReff.value,id:this._uuid.uuid()
   }
 this.newToDoEmmiter.emit(newToDo);
 this.todoFormReff.reset()
+  }
   }
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['getEdit'].currentValue){

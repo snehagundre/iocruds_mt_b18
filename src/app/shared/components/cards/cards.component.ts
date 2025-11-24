@@ -18,12 +18,12 @@ export class CardsComponent implements OnInit,OnChanges {
 @Output() newprdEmmiter : EventEmitter<IProduct> = new EventEmitter<IProduct>()
 @Output() uprdEmmiter : EventEmitter<IProduct> = new EventEmitter<IProduct>()
 @Input()  getEprdemited !: IProduct
-isInEditMode :boolean= true
+isInEditMode :boolean= false
 
   ngOnInit(): void {
   }
   onprdAdd(){
-    let newPrd : IProduct={
+  let newPrd : IProduct={
      ...this.prdFormReff.value,pid:this._uuid.uuid()
     }
     this.newprdEmmiter.emit(newPrd);
@@ -40,6 +40,7 @@ isInEditMode :boolean= true
      ...this.prdFormReff.value,pid:this.getEprdemited.pid
     }
     this.uprdEmmiter.emit(upPrd);
+    this.isInEditMode=false
     this.prdFormReff.reset()
   }
 
